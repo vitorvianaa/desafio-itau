@@ -11,6 +11,9 @@ def create_app(config_class = DevConfig):
     db.init_app(app)
     migrate.init_app(app, db)
 
+
     app.register_blueprint(asset_bp, url_prefix='/asset')
 
     return app
+
+from .models import User, Asset, Operation, Position, Price
