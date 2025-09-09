@@ -11,3 +11,10 @@ class Asset(db.Model):
     
     def __repr__(self):
         return f'asset id: {self.id}'
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "code": self.code,
+            "name": self.name
+        }
