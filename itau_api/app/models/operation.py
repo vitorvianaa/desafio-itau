@@ -18,3 +18,14 @@ class Operation(db.Model):
     def __repr__(self):
         return f'operation id: {self.id}'
     
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "asset_id": self.asset_id,
+            "qtd": self.qtd,
+            "unit_value": self.unit_value,
+            "operation_type": self.operation_type,
+            "brokerage": self.brokerage,
+            "date": self.date
+        }

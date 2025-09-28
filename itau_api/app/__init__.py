@@ -4,6 +4,7 @@ from .extensions import db, migrate
 from .routes.asset_router import asset_bp
 from .routes.user_router import user_bp
 from .routes.price_router import price_bp
+from .routes.operation_router import operation_bp
 
 def create_app(config_class = DevConfig):
 
@@ -17,6 +18,7 @@ def create_app(config_class = DevConfig):
     app.register_blueprint(asset_bp, url_prefix='/asset')
     app.register_blueprint(user_bp, url_prefix='/users' )
     app.register_blueprint(price_bp, url_prefix='/prices' )
+    app.register_blueprint(operation_bp, url_prefix='/operations')
 
     return app
 
