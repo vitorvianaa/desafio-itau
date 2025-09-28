@@ -2,6 +2,7 @@ from flask import Flask
 from .config import DevConfig
 from .extensions import db, migrate
 from .routes.asset_router import asset_bp
+from .routes.user_router import user_bp
 
 def create_app(config_class = DevConfig):
 
@@ -13,6 +14,7 @@ def create_app(config_class = DevConfig):
 
 
     app.register_blueprint(asset_bp, url_prefix='/asset')
+    app.register_blueprint(user_bp, url_prefix='/users' )
 
     return app
 

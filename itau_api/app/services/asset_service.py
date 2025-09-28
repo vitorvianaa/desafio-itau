@@ -23,7 +23,7 @@ class AssetService:
             return Utils.send_response(status=200, response=all_assets, message='all assets')
         except IntegrityError as e:
             print(f"Error in get_all_assest: {e}")
-            return Utils.send_response(status=500, response=all_assets, message='Internal error')
+            return Utils.send_response(status=500, response={}, message='Internal error')
         
     def new_asset(self, new_asset: Dict):
         """
