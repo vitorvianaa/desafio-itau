@@ -51,7 +51,7 @@ class UserService:
             user: User = User.query.get(user_id)
             if not user:
                 return Utils.send_response(status=409, response={}, error='the user not exist')
-            print(update_info)
+        
             if "name" in update_info:
                 user.name = update_info.get('name')
             

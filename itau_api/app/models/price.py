@@ -13,3 +13,11 @@ class Price(db.Model):
 
     def __repr__(self):
         return f'price id: {self.id}'
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "asset_id": self.asset_id,
+            "unit_value": self.unit_value,
+            "date": self.date
+        }

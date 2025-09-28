@@ -7,9 +7,6 @@ user = UserService()
 
 @user_bp.route('/', methods=['GET'])
 def get_all_user():
-    """
-        retornar todas a última cotação desse asset
-    """
     data = user.get_all_users()
     return data
 
