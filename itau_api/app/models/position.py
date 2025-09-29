@@ -13,3 +13,13 @@ class Position(db.Model):
 
     def __repr__(self):
         return f'position id: {self.id}'
+    
+    def to_dict(self):
+        return{
+            "id": self.id,
+            "user_id": self.user_id,
+            "asset_id": self.asset_id,
+            "qtd": self.qtd,
+            "average_price": self.average_price,
+            "pl": self.pl
+        }
